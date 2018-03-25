@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="coralpink">
+    <ion-navbar>
+      <ion-title>CU Cooperative Store</ion-title>
+    </ion-navbar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list-header>
+        {{ store.store_name }}
+      </ion-list-header>
+      
+    <ion-list>
+  
+        <ion-item text-center>
+          <h2> {{ menu.menu_name }} </h2>
+        </ion-item>
+  
+        <ion-item>
+            <ion-label color="primary" stacked>หมายเหตุอื่นๆ</ion-label>
+            <ion-input type="text" [(ngModel)]="add" placeholder="ซอส, ความหวาน, ปริมาณน้ำแข็ง, ..."></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>จำนวน</ion-label>
+          <ion-input type="number" [(ngModel)]="amount" placeholder="1, 2, 3, ..."></ion-input>
+        </ion-item>
+
+        <button ion-button block (click)="openOrder()">เพิ่มลงในตระกร้า</button>
+
+  </ion-list>
+</ion-content>

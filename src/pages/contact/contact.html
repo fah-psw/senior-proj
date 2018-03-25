@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="coralpink">
+    <ion-navbar>
+      <ion-title>CU Cooperative Store</ion-title>
+    </ion-navbar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list-header>
+    ตะกร้าสินค้า
+  </ion-list-header>
+
+    <ion-list>
+      <ion-item ng-repeat="stores in storelists">
+        <ion-thumbnail item-start>
+        </ion-thumbnail>
+        <h2>x{{amount}}  {{menu}}</h2>
+        <p>{{add}}</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-thumbnail item-start>
+        </ion-thumbnail>
+        <p>ราคาอาหารทั้งหมด: THB {{price}}</p>
+        <p>ค่าบริการจัดส่ง: THB 5</p>
+      </ion-item>
+      
+      <ion-item>
+        <ion-thumbnail item-start>
+        </ion-thumbnail>
+        <h2>ราคารวม: THB {{totalprice}}</h2>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Location</ion-label>
+          <ion-select [(ngModel)]="location" >
+            <ion-option *ngFor="let locations of locationlists"  value="{{ locations.location_id }}">{{ locations.name }}</ion-option>
+          </ion-select>
+        </ion-item>
+
+      <ion-item>
+        <ion-label fixed>ชื่อ</ion-label>
+        <ion-input type="text" [(ngModel)]="cus_name"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label fixed>เบอร์โทร</ion-label>
+        <ion-input type="tel" [(ngModel)]="cus_phone"></ion-input>
+      </ion-item>
+      
+      <button ion-button block (click)="makeOrder()">ยืนยันคำสั่งซื้อ</button>
+
+    </ion-list>
+</ion-content>

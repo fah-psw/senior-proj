@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="coralpink">
+    <ion-navbar>
+      <ion-title>CU Cooperative Store</ion-title>
+    </ion-navbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list-header> 
+    สินค้าที่ต้องได้รับ
+  </ion-list-header>
+    
+  <ion-list *ngFor="let orders of orderlists">
+    <ion-item >
+      <h2>x{{orders.amount}}  {{orders.menu}}   THB {{orders.totalprice}}</h2>
+      <p>สถานะ: {{orders.status}}</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

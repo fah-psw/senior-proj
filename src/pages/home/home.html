@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="coralpink">
+    <ion-navbar>
+      <ion-title>CU Cooperative Store</ion-title>
+    </ion-navbar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list-header> 
+        Store 
+    </ion-list-header>
+
+    
+      
+    <ion-list *ngFor="let stores of storelists">
+      <ion-item >
+        <h2>{{ stores.store_name }}</h2>
+        <button ion-button clear item-end (click)="openStore(stores)">View</button>
+      </ion-item>
+    </ion-list>
+</ion-content>
